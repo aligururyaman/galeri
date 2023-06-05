@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
+import { FcDislike } from "react-icons/fc";
 
 function Basket() {
  
@@ -31,21 +32,44 @@ function Basket() {
       
     }
   return (
-    <div>
-        <Link to="/">Anasayfa</Link>
-      <h2>Favoriler</h2>
-      <button className="btn" onClick={temizle}>Hepsini sil</button>
-      <ul>
-        {favorites.map((favorite, index) => (
-          <li key={index}>
-            <img src={favorite.imageUrl} alt={favorite.altDescription}/>
-            <button className="btn" onClick={favKaldir}>Fav Kaldır</button>
-            
-            
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+
+      <div>
+        <nav className='navbar bg-body-tertiary'>
+          <div className="container">
+        <Link className="btn btn-info" to="/">Anasayfa</Link>
+        <h2>Favoriler</h2>
+        
+        <button className="btn btn-danger" onClick={temizle}>Hepsini sil</button>
+      
+        </div>
+        </nav>
+        </div>
+      
+      
+      
+      <div className="container">
+                <div className="row align-items-start">
+                    <div className="col">
+                        <div className="card">
+                              
+                                {favorites.map((favorite, index) => (
+                                  <div key={index}>
+                                    <img className="imagelistimg card" src={favorite.imageUrl} alt={favorite.altDescription}/>
+                                    <button className="btn" onClick={favKaldir}><FcDislike/></button>
+                                    
+                                    </div>
+                                  
+                                ))}
+                              
+                                              
+                        </div>
+                    </div>    
+                </div>
+            </div>
+    
+    </>
+   
   );
 }
 

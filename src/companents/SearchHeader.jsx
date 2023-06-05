@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FcLike } from "react-icons/fc";
 
 function SearchHeader({ search }){
 
@@ -19,7 +20,15 @@ function SearchHeader({ search }){
   return (
     <>
     <div>
-      <Link to="basket">Favoriler</Link>
+      <nav className='navbar bg-body-tertiary'>
+        <div className="container">
+          <Link className='btn btn-info' to="/">Anasayfa</Link>
+          <h2>GaLLeriA</h2>
+          <Link className='btn btn-light' to="basket"><FcLike/></Link>
+          
+        </div>
+      </nav>
+      
     </div>
     <form className='containerClass' onSubmit={handleFormSubmit} >
             <div className="mb-3 mt-3 text-center">

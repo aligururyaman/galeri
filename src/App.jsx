@@ -3,7 +3,7 @@ import SearchHeader from './companents/SearchHeader'
 import ImageList from './companents/ImageList'
 import searchImages from './companents/Api'
 import './style/App.css'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Basket from './pages/Basket'
 
 
@@ -18,6 +18,9 @@ function App() {
     
   return (
     <>
+        
+     
+
       <BrowserRouter>
         <Routes>
           <Route path="/" element={
