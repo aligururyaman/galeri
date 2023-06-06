@@ -22,14 +22,12 @@ function ImageItem({image}) {
     return ( 
         <>
         {/* Resimlerin gösterildiği kısım */}
-            <div className="container">
-                <div className="row align-items-start">
-                    <div className="col"> 
-                        <img className="btnimg" onClick={favEkle} src={image.urls.small} alt={image.alt_description}/>   
-                    </div>
-                </div>    
+        <div className="gurur">       
+            <img className="btnimg image" onClick={favEkle} src={image.urls.small} alt={image.alt_description}/> 
+            <div className="middle">
+                <div className="text">Favorilere Ekle</div>
             </div>
-            
+            </div>
         </>
      );
 }
