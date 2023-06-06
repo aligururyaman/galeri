@@ -36,14 +36,7 @@
     
   }
   
-  .lable {
-    margin-top: 1px;
-    font-size: 19px;
-    line-height: 22px;
-    color: #056DFA;
-    font-family: sans-serif;
-    letter-spacing: 1px;
-  }
+
   
   .button:hover {
     background: #056bfa49;
@@ -53,25 +46,27 @@
     animation: spin 1s linear infinite;
   }
   
-.card {
-  width: 20rem;
+
+
+.col {
+  display:grid;
+  grid-template-columns: repeat(4, 1fr); 
+  grid-gap: 2rem; 
 }
-
-
-
-
-.btnimg:hover .overlay{
-  opacity: 12;
+.btnimg {
+  width: 18rem;
+  height: 19rem;
+  box-sizing: border-box; 
+  border: 1px solid black; 
+  padding: 5px;
+  margin-top: 10px;
+  
+   
+  
 }
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
+@media (max-width: 600px) {
+  /* 600 piksel genişlikten küçük ekranlarda alt alta sıralama */
+  .btnimg {
+    width: 100%;
+  }
 }

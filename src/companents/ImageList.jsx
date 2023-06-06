@@ -6,7 +6,7 @@ function ImageList({imagesPlaceholder}) {
         <div>
             <div className="imagelist">
                 {imagesPlaceholder.map((image, index) => {
-                   return <ImageItem key={index} image={image}/>
+                   return <ImageItem  className="item" key={index} image={image}/>
                 })}
                 
             </div>

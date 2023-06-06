@@ -1,7 +1,7 @@
 import { FcLike } from "react-icons/fc";
 
 function ImageItem({image}) {
-
+    // Favorilere ekleyen fonksiyon
     function favEkle() {
   
         var imageUrl = image.urls.small;
@@ -21,17 +21,14 @@ function ImageItem({image}) {
 
     return ( 
         <>
+        {/* Resimlerin gösterildiği kısım */}
             <div className="container">
-                <div className="row text-center">
-                    <div className="col m-4 .d-lg-flex"> 
-                        
-                        <div className="overly">
-                            <img className="btnimg" onClick={favEkle} src={image.urls.small} alt={image.alt_description}/>
-                            <div className="text"><FcLike/></div>
-                        </div>     
-                        </div>
-                    </div>    
-                </div>
+                <div className="row align-items-start">
+                    <div className="col"> 
+                        <img className="btnimg" onClick={favEkle} src={image.urls.small} alt={image.alt_description}/>   
+                    </div>
+                </div>    
+            </div>
             
         </>
      );
