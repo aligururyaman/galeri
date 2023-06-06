@@ -1,22 +1,4 @@
 
-.containerClass {
-    border: 1px solid lightgray;
-    border-radius: 10px;
-    margin: 2rem;
-}
-img {
-    width: auto;
-    height: auto;
-    border-radius: 10px;
-}
-.imagelist {
-    columns: 300px 6;
-    column-gap: 5px;
-}
-.imagelistimg {
-    width: 100%;
-    margin-bottom: 10px;
-}
 
   button {
     border: 2px solid #24b4fb;
@@ -73,4 +55,23 @@ img {
   
 .card {
   width: 20rem;
+}
+
+
+
+
+.btnimg:hover .overlay{
+  opacity: 12;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
 }

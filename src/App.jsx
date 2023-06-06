@@ -14,14 +14,10 @@ function App() {
       const result = await searchImages(term)
       setImages(result)
     }
-
-    
+       
   return (
     <>
-        
-     
-
-      <BrowserRouter>
+    <BrowserRouter>
         <Routes>
           <Route path="/" element={
             <>
@@ -32,7 +28,6 @@ function App() {
           <Route path="Basket" element={<Basket />} />
         </Routes>
       </BrowserRouter>
-      
     </>
   )
 }

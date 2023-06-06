@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FcLike } from "react-icons/fc";
+import { FcLike, FcSearch} from "react-icons/fc";
 
 function SearchHeader({ search }){
 
@@ -23,20 +23,24 @@ function SearchHeader({ search }){
       <nav className='navbar bg-body-tertiary'>
         <div className="container">
           <Link className='btn btn-info' to="/">Anasayfa</Link>
-          <h2>GaLLeriA</h2>
-          <Link className='btn btn-light' to="basket"><FcLike/></Link>
           
+          
+            <div className="contailer-fluid">
+              <form className='d-flex' onSubmit={handleFormSubmit} >
+                
+                <div className="mb-1 mt-1 text-center">
+                
+                    <input type="text" className="form-control me-1" placeholder='Resim Ara' value={value} onChange={handleChange}/> 
+                    
+                </div>
+              </form>
+            </div>
+          <Link className='btn btn-light' to="basket"><FcLike/></Link>
         </div>
       </nav>
       
     </div>
-    <form className='containerClass' onSubmit={handleFormSubmit} >
-            <div className="mb-3 mt-3 text-center">
-                <label className="form-label">Aramak istediğiniz Kelimeyi Girin</label>
-                <input type="text" className="form-control" value={value} onChange={handleChange}/>
-                
-            </div>
-        </form>
+    
       
     </>
   )

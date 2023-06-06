@@ -10,8 +10,6 @@ function ImageItem({image}) {
 
         var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-        
-
         var newFavorite = {
             imageUrl: imageUrl,
             altDescription: altDescription,
@@ -20,23 +18,21 @@ function ImageItem({image}) {
         favorites.push(newFavorite);
         localStorage.setItem('favorites', JSON.stringify(favorites));
 }
-console.log(image)
-    
+
     return ( 
         <>
             <div className="container">
-                <div className="row align-items-start">
-                    <div className="col">
-                        <div className="card">
-                            <img className="imagelistimg card" src={image.urls.small} alt={image.alt_description}/>
-                            <div className="card-body">
-                                <h5 className="card-tittle">{image.description}</h5>
-                                <button className="btn" onClick={favEkle}><FcLike/></button>
-                            </div>
+                <div className="row text-center">
+                    <div className="col m-4 .d-lg-flex"> 
+                        
+                        <div className="overly">
+                            <img className="btnimg" onClick={favEkle} src={image.urls.small} alt={image.alt_description}/>
+                            <div className="text"><FcLike/></div>
+                        </div>     
                         </div>
                     </div>    
                 </div>
-            </div>
+            
         </>
      );
 }
