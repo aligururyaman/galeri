@@ -23,9 +23,9 @@ function ImageItem({image}) {
         <>
         {/* Resimlerin gösterildiği kısım */}
         <div className="gurur">       
-            <img className="btnimg image" onClick={favEkle} src={image.urls.small} alt={image.alt_description}/> 
+            <img className="btnimg image"  src={image.urls.small} alt={image.alt_description}/> 
             <div className="middle">
-                <div className="text">Favorilere Ekle</div>
+                <div className="text" onClick={favEkle}><FcLike/></div>
             </div>
             </div>
         </>

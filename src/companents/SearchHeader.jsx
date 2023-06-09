@@ -35,7 +35,7 @@ function SearchHeader({ search }){
                 </div>
               </form>
             </div>
-          <Link className='btn btn-light' to="basket"><FcLike/></Link>
+          <Link className='btn btn-danger kalp' to="basket">Favoriler <FcLike/></Link>
         </div>
       </nav>
       

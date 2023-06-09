@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import { FcDislike } from "react-icons/fc";
+import VeriYokMesaji from "./mesaj";
 
 function Basket() {
 // Temizle Butonu 
@@ -38,16 +39,20 @@ function Basket() {
       </div>
     {/* Resimlerin gösterildiği bölüm */}
       <div className="container">
+        {favorites.length === 0 ? <VeriYokMesaji/> : 
         <div className="row align-items-start">
             <div className="col">
                 {favorites.map((favorite, index) => (
                   <div key={index}>
+                    
                     <img className="btnimg" src={favorite.imageUrl} alt={favorite.altDescription}/>
                     <button className="btn" onClick={favKaldir}><FcDislike/></button> 
                   </div>
                 ))}   
-            </div>    
+            </div>
+            
          </div>
+          }
        </div>
     </>
    
@@ -55,7 +60,3 @@ function Basket() {
 }
 
 export default Basket;
-
-
-
-
