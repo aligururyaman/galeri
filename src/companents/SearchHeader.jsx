@@ -43,11 +43,7 @@ function SearchHeader({ search }){
           </div> 
         </div>
       </div>
-    </header>
-
- 
-    
-      
+    </header> 
     </>
   )
 }

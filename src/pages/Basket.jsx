@@ -28,25 +28,34 @@ function Basket() {
   return (
     <>
     {/* Navbar Bölümü */}
-      <div>
-        <nav className='navbar bg-body-tertiary'>
-          <div className="container">
-            <Link className="btn btn-info" to="/">Anasayfa</Link>
-            <h2>Favoriler</h2>
-            <button className="btn btn-danger" onClick={temizle}>Hepsini sil</button>
-          </div>
-        </nav>
-      </div>
-    {/* Resimlerin gösterildiği bölüm */}
+
+
+    <header className="headerSection">
       <div className="container">
+        <div className="content">
+          <div className="headernadsub">
+            <p  className='subhead'><Link to="/">Anasayfa</Link></p>
+            <p className="head">Favorilediğin Resimler...</p>
+          </div> 
+          <div className="buttonlabel">
+            <button className="buttonbase" onClick={temizle}>Temizle</button> 
+          </div>    
+        </div> 
+      </div>
+    </header> 
+      
+    {/* Resimlerin gösterildiği bölüm */}
+      <div className="imagesShow">
         {favorites.length === 0 ? <VeriYokMesaji/> : 
-        <div className="row align-items-start">
-            <div className="col">
+        <div className="containerImg">
+            <div className="contentImg">
                 {favorites.map((favorite, index) => (
-                  <div key={index}>
-                    
-                    <img className="btnimg" src={favorite.imageUrl} alt={favorite.altDescription}/>
-                    <button className="btn" onClick={favKaldir}><FcDislike/></button> 
+                  <div key={index}>   
+                    <img className="imageApi" src={favorite.imageUrl} alt={favorite.altDescription}/>
+                    <button className="favAdd" onClick={favKaldir}>
+                    <span className="button__text">Kaldır</span>
+                    <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                    </button> 
                   </div>
                 ))}   
             </div>
