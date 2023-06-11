@@ -16,30 +16,36 @@ function SearchHeader({ search }){
   const handleChange = (event) => {
     setValue(event.target.value) 
   }
+  const handleKeyPress =(event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+  
+      search(value);
+    }
+  }
 
   return (
     <>
-    <div>
-      <nav className='navbar bg-body-tertiary'>
-        <div className="container">
-          <Link className='btn btn-info' to="/">Anasayfa</Link>
-          
-          
-            <div className="contailer-fluid">
-              <form className='d-flex' onSubmit={handleFormSubmit} >
-                
-                <div className="mb-1 mt-1 text-center">
-                
-                    <input type="text" className="form-control me-1" placeholder='Resim Ara' value={value} onChange={handleChange}/> 
-                    
-                </div>
-              </form>
-            </div>
-          <Link className='btn btn-danger kalp' to="basket">Favoriler <FcLike/></Link>
+    <header className="headerSection">
+      <div className="container">
+        <div className="content">
+          <div className="headernadsub">
+            <p  className='subhead'><Link to="basket">Favorilere Git</Link></p>
+            <p className="head">Bulmak istediğin resim burada !</p>
+          </div>
         </div>
-      </nav>
-      
-    </div>
+        <div className="capture" >
+          <div className="inputlabel">
+            <input type="text" className="inputField" placeholder='Resim Ara' value={value} onChange={handleChange} onKeyPress={handleKeyPress} />
+          </div> 
+          <div className="buttonlabel">
+            <button className="buttonbase" onClick={handleFormSubmit}>Ara</button> 
+          </div> 
+        </div>
+      </div>
+    </header>
+
+ 
     
       
     </>
