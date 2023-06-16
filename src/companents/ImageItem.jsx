@@ -17,17 +17,33 @@ function ImageItem({image}) {
         };
         favorites.push(newFavorite);
         localStorage.setItem('favorites', JSON.stringify(favorites));
-}
+
+        alert("Favorilere Eklendi")
+        setTimeout(function() {
+            var alertBox = document.querySelector(".alert");
+            alertBox.style.display = "none";
+        
+        }, 1000);
+        };
+
+
+
+
 
     return ( 
         <>
-            <div className="imageLabel">
-                <img className="imageApi"  src={image.urls.small} alt={image.alt_description}/>
-                <div className="btnLabel">
-                  <button className="favAdd" onClick={favEkle}>
-                    <span className="button__text">Favorilere Ekle</span>
-                    <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
-                    </button>   
+            <div className="imagesOne">
+                <img className="images"  src={image.urls.small} alt={image.alt_description}/>
+                <div className="textandsocial">
+                    <div className="nameandDesc">
+                        <p className="name">{image.alt_description}</p>
+                        <p className="supportingText">{image.description}</p>
+                        <div className="favAdd" onClick={favEkle}>
+                    <FcLike/>
+                    
+                    </div>  
+                    </div>
+                   
                 </div>                    
             </div>      
         </>
