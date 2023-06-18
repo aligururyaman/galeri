@@ -341,60 +341,67 @@ flex-grow: 0;
 
 /* Media Blogu */
 
-@media (max-width: 420px) {
+@media only screen and (max-width: 600px) {
   .headerSection {
-    /* Auto layout */
-
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 64px 0px;
-gap: 48px;
-
-position: relative;
-width: 375px;
-height: 4566px;
-
-/* White */
-
-background: #FFFFFF;
+    padding: 32px 0px;
+    gap: 24px;
+    height: auto;
   }
-.container {
-  /* Auto layout */
 
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px 16px;
-gap: 32px;
+  .container {
+    padding: 0px 8px;
+    gap: 8px;
+  }
 
-width: 375px;
-height: 334px;
+  .content {
+    gap: 16px;
+  }
 
+  .headerandsub {
+    gap: 8px;
+  }
 
-/* Inside auto layout */
+  .subhead {
+    font-size: 10px;
+    line-height: 14px;
+  }
 
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
-}
-.content {
-  display: flex;
-flex-direction: column;
-align-items: center;
-padding: 0px;
-gap: 32px;
+  .head {
+    font-size: 20px;
+    line-height: 28px;
+  }
 
-width: 343px;
-height: 334px;
+  .supportText {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 6px 12px;
+  }
 
+  .capture {
+    gap: 6px;
+  }
 
-/* Inside auto layout */
+  .inputField {
+    padding: 6px 8px;
+    gap: 2px;
+    height: 28px;
+  }
 
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
-}
+  .inputlabel {
+    gap: 2px;
+    height: 28px;
+  }
+
+  .button {
+    width: 60px;
+    height: 28px;
+  }
+
+  .buttonbase {
+    padding: 8px 12px;
+    gap: 4px;
+    width: 60px;
+    height: 28px;
+    font-size: 12px;
+  }
 }
